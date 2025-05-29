@@ -1,0 +1,23 @@
+<div class="shell-container">
+  <header class="main-header">
+    <div class="logo">
+      <h1>ISIMEMO</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a routerLink="/accueil" routerLinkActive="active">Accueil</a></li>
+        <li><a routerLink="/documents">Documents</a></li>
+        <li><a routerLink="/recherche">Recherche</a></li>
+        <li><a routerLink="/profil">Profil</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer class="main-footer">
+    <p>&copy; 2025 ISIMEMO - Plateforme de gestion des mémoires</p>
+  </footer>
+</div>
