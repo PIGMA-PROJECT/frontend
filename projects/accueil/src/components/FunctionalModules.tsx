@@ -6,10 +6,6 @@ const modules = [
     id: 'users',
     title: 'Gestion des utilisateurs et des rôles',
     icon: 'manage_accounts',
-    color: 'from-blue-600 to-indigo-700',
-    lightColor: 'bg-blue-50',
-    iconColor: 'text-blue-600',
-    borderColor: 'border-blue-200',
     features: [
       'Étudiants, professeurs (encadreurs, jury), chefs de département, secrétaires',
       'Système d\'authentification et de gestion des permissions',
@@ -21,10 +17,6 @@ const modules = [
     id: 'memoires',
     title: 'Dépôt et gestion des mémoires',
     icon: 'upload_file',
-    color: 'from-emerald-600 to-teal-700',
-    lightColor: 'bg-emerald-50',
-    iconColor: 'text-emerald-600',
-    borderColor: 'border-emerald-200',
     features: [
       'Consultation de la bibliothèque des anciens sujets',
       'Soumission des fiches de dépôt et des canevas',
@@ -36,10 +28,6 @@ const modules = [
     id: 'encadrement',
     title: 'Système intelligent d\'encadrement',
     icon: 'supervisor_account',
-    color: 'from-violet-600 to-purple-700',
-    lightColor: 'bg-violet-50',
-    iconColor: 'text-violet-600',
-    borderColor: 'border-violet-200',
     features: [
       'Sélection et attribution des encadreurs',
       'Planification automatisée des séances d\'encadrement',
@@ -51,10 +39,6 @@ const modules = [
     id: 'ia',
     title: 'Module d\'analyse IA',
     icon: 'smart_toy',
-    color: 'from-rose-600 to-pink-700',
-    lightColor: 'bg-rose-50',
-    iconColor: 'text-rose-600',
-    borderColor: 'border-rose-200',
     features: [
       'Analyse de la pertinence des sujets proposés',
       'Recommandation d\'encadreurs en fonction des domaines d\'expertise',
@@ -67,10 +51,6 @@ const modules = [
     id: 'jury',
     title: 'Gestion des jurys et soutenances',
     icon: 'groups',
-    color: 'from-amber-600 to-orange-700',
-    lightColor: 'bg-amber-50',
-    iconColor: 'text-amber-600',
-    borderColor: 'border-amber-200',
     features: [
       'Configuration des jurys par les chefs de département',
       'Planification des pré-soutenances et soutenances',
@@ -82,10 +62,6 @@ const modules = [
     id: 'bibliotheque',
     title: 'Bibliothèque numérique intelligente',
     icon: 'auto_stories',
-    color: 'from-cyan-600 to-sky-700',
-    lightColor: 'bg-cyan-50',
-    iconColor: 'text-cyan-600',
-    borderColor: 'border-cyan-200',
     features: [
       'Indexation sémantique des mémoires passés',
       'Recherche avancée par concepts et thématiques',
@@ -97,10 +73,6 @@ const modules = [
     id: 'assistant',
     title: 'Assistant virtuel (chatbot)',
     icon: 'support_agent',
-    color: 'from-indigo-600 to-blue-800',
-    lightColor: 'bg-indigo-50',
-    iconColor: 'text-indigo-600',
-    borderColor: 'border-indigo-200',
     features: [
       'Réponse aux questions fréquentes des étudiants',
       'Aide à la navigation dans la plateforme',
@@ -169,7 +141,7 @@ const FunctionalModules = () => {
                   transition={{ duration: 0.5 }}
                   className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-white/10"
                 >
-                  <div className={`bg-gradient-to-r ${module.color} p-8 text-white relative overflow-hidden`}>
+                  <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-8 text-white relative overflow-hidden">
                     {/* Cercles décoratifs */}
                     <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-xl"></div>
                     <div className="absolute -left-5 -bottom-5 w-32 h-32 rounded-full bg-black/10 blur-lg"></div>
@@ -198,12 +170,12 @@ const FunctionalModules = () => {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
-                          className={`flex items-start gap-4 p-4 rounded-xl ${module.lightColor} border ${module.borderColor} backdrop-blur-sm`}
+                          className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all"
                         >
-                          <div className={`w-10 h-10 rounded-lg ${module.lightColor} flex items-center justify-center flex-shrink-0`}>
-                            <span className={`material-icons ${module.iconColor}`}>check_circle</span>
+                          <div className="w-10 h-10 rounded-lg bg-primary-500/20 flex items-center justify-center flex-shrink-0">
+                            <span className="material-icons text-primary-400">check_circle</span>
                           </div>
-                          <span className="text-navy-700 font-medium">{feature}</span>
+                          <span className="text-gray-200 font-medium">{feature}</span>
                         </motion.li>
                       ))}
                     </ul>

@@ -8,59 +8,66 @@ import { Loader2, X, MapPin, Phone, Mail } from "lucide-react";
 const locationData = [
   {
     city: "ISI SIÉGE – DAKAR",
-    address: "123 Avenue de la République, Dakar",
-    phone: "+221 33 123 4567",
-    email: "dakar@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123488.4516195259!2d-17.55386245!3d14.716442549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar%2C%20Senegal!5e0!3m2!1sen!2sus!4v1684998345943!5m2!1sen!2sus"
+    address: "Institut Supérieur Informatique, Bd de Ziguinchor, Dakar 28110",
+    phone: "+221 33 822 19 81",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5934567890123!2d-17.4550511!3d14.6939834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f52455db2b%3A0x5185b7c58792f17e!2sInstitut%20Sup%C3%A9rieur%20Informatique%2C%20Bd%20de%20Ziguinchor%2C%20Dakar%2028110!5e0!3m2!1sfr!2ssn!4v1640995200000!5m2!1sfr!2ssn"
   },
   {
     city: "ISI-KEUR MASSAR",
-    address: "45 Avenue Principale, Keur Massar",
-    phone: "+221 33 234 5678",
-    email: "keurmassar@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123550.60866827796!2d-17.45!3d14.783333300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c792d5e683%3A0xe0cf427c2d0e1855!2sKeur%20Massar%2C%20Senegal!5e0!3m2!1sen!2sus!4v1716657333349!5m2!1sen!2sus"
+    address: "ISI KEUR MASSAR, cité Darou Salam, Keur Massar",
+    phone: "+221 78 161 29 29",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.1234567890123!2d-17.2860606!3d14.7863845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1a07e2f23e099%3A0x65ad33f588813e2!2sCit%C3%A9%20Darou%20Salam%2C%20Keur%20Massar!5e0!3m2!1sfr!2ssn!4v1640995300000!5m2!1sfr!2ssn"
   },
   {
     city: "ISI-SUPTECH",
-    address: "78 Rue de la Technologie, Dakar",
-    phone: "+221 33 345 6789",
-    email: "suptech@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123488.4516195259!2d-17.55386245!3d14.716442549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar%2C%20Senegal!5e0!3m2!1sen!2sus!4v1684998345943!5m2!1sen!2sus"
+    address: "Institut Supérieur Informatique, Bd de Ziguinchor, Dakar 28110",
+    phone: "+221 77 978 26 18",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1035.9019134203934!2d-17.456603161142006!3d14.717111845123302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0xec173f885c76ebd%3A0xbef196f8b62a0b7e!2sISI%20SUPTECH%2C%20Allees%20Khalifa%20Ababacar%20Sy%2C%20Dakar!3m2!1d14.719004499999999!2d-17.4564756!4m5!1s0xec173f885c76ebd%3A0xbef196f8b62a0b7e!2sISI%20SUPTECH%2C%20Allees%20Khalifa%20Ababacar%20Sy%2C%20Dakar!3m2!1d14.719004499999999!2d-17.4564756!5e0!3m2!1sfr!2ssn!4v1751293845808!5m2!1sfr!2ssn"
   },
   {
     city: "ISI KAOLACK",
     address: "25 Avenue du Baobab, Kaolack",
-    phone: "+221 33 456 7890",
-    email: "kaolack@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62072.26775956598!2d-16.10000005!3d14.133333300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec6cc30329ec901%3A0xadb370b5eaf9b193!2sKaolack%2C%20Senegal!5e0!3m2!1sen!2sus!4v1716657408043!5m2!1sen!2sus"
+    phone: "+221 33 822 19 81",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62072.26775956598!2d-16.0729!3d14.1510!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA5JzA0LjAiTiAxNsKwMDQnMjIuNCJX!5e0!3m2!1sfr!2ssn!4v1640995500000!5m2!1sfr!2ssn"
   },
   {
     city: "ISI-DIOURBEL",
     address: "15 Rue du Marché, Diourbel",
-    phone: "+221 33 567 8901",
-    email: "diourbel@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61896.81025918109!2d-16.266666699999998!3d14.733333300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec6ee28316b943f%3A0x72e2d28c52f6eb84!2sDiourbel%2C%20Senegal!5e0!3m2!1sen!2sus!4v1716657457131!5m2!1sen!2sus"
+    phone: "+221 33 822 19 81",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d61896.81025918109!2d-16.2330!3d14.6520!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM5JzA3LjIiTiAxNsKwMTMnNTguOCJX!5e0!3m2!1sfr!2ssn!4v1640995600000!5m2!1sfr!2ssn"
   },
   {
     city: "ISI-KAFFRINE",
     address: "32 Boulevard Central, Kaffrine",
-    phone: "+221 33 678 9012",
-    email: "kaffrine@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61980.06887722522!2d-15.55!3d14.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec72c3b09d82af9%3A0xed9d5f4135bcd068!2sKaffrine%2C%20Senegal!5e0!3m2!1sen!2sus!4v1716657492658!5m2!1sen!2sus"
+    phone: "+221 33 822 19 81",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d61980.06887722522!2d-15.5500!3d14.1000!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA2JzAwLjAiTiAxNcKwMzMnMDAuMCJX!5e0!3m2!1sfr!2ssn!4v1640995700000!5m2!1sfr!2ssn"
   },
   {
     city: "ISI ZIGUINCHOR",
     address: "57 Avenue du Port, Ziguinchor",
-    phone: "+221 33 789 0123",
-    email: "ziguinchor@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123946.12271017698!2d-16.3!3d12.566666699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xee9d5c6f319aeeb%3A0x4df1e3c48c093c67!2sZiguinchor%2C%20Senegal!5e0!3m2!1sen!2sus!4v1716657530532!5m2!1sen!2sus"
+    phone: "33 991 76 17",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d123946.12271017698!2d-16.2700!3d12.5633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMzJzQ4LjAiTiAxNsKwMTYnMTIuMCJX!5e0!3m2!1sfr!2ssn!4v1640995800000!5m2!1sfr!2ssn"
   },
   {
-    city: "ISI-KOMUNIK NOUAKCHOTT & NOUADHIBOU",
+    city: "ISI-KOMUNIK NOUAKCHOTT",
     address: "89 Avenue des Dunes, Nouakchott, Mauritanie",
-    phone: "+222 45 123 456",
-    email: "nouakchott@isimemo.edu",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122390.05939487567!2d-16!3d18.116666699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe965354a4dd6ed%3A0x3d0e06ab9cf8f715!2sNouakchott%2C%20Mauritania!5e0!3m2!1sen!2sus!4v1716657570675!5m2!1sen!2sus"
+    phone: "++222 45 24 00 82",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d122390.05939487567!2d-15.9800!3d18.0861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDA1JzEwLjAiTiAxNcKwNTgnNDguMCJX!5e0!3m2!1sfr!2smr!4v1640995900000!5m2!1sfr!2smr"
+  },
+  {
+    city: "ISI-KOMUNIK NOUADHIBOU",
+    address: "15 Boulevard Central, Nouadhibou, Mauritanie",
+    phone: "+222 41 73 72 35",
+    email: "contact@groupeisi.com",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d115234.56789012345!2d-17.0300!3d20.9310!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU1JzUxLjYiTiAxN8KwMDEnNDguMCJX!5e0!3m2!1sfr!2smr!4v1641000000000!5m2!1sfr!2smr"
   }
 ];
 
@@ -410,19 +417,48 @@ const Contact = () => {
 
               <div className="flex space-x-4">
                 {[
-                  { icon: "facebook", color: "bg-blue-500 hover:bg-blue-600" },
-                  { icon: "twitter", color: "bg-sky-500 hover:bg-sky-600" },
-                  { icon: "linkedin", color: "bg-blue-700 hover:bg-blue-800" },
-                  { icon: "youtube", color: "bg-red-600 hover:bg-red-700" }
+                  { 
+                    icon: "fab fa-facebook-f", 
+                    color: "bg-blue-600 hover:bg-blue-700", 
+                    url: "https://www.facebook.com/GroupeISI/",
+                    label: "Facebook"
+                  },
+                  { 
+                    icon: "fab fa-x-twitter", 
+                    color: "bg-gray-900 hover:bg-black", 
+                    url: "https://x.com/groupeisi?lang=fr",
+                    label: "X (Twitter)"
+                  },
+                  { 
+                    icon: "fab fa-linkedin-in", 
+                    color: "bg-blue-700 hover:bg-blue-800", 
+                    url: "https://www.linkedin.com/company/groupe-isi/?viewAsMember=true",
+                    label: "LinkedIn"
+                  },
+                  { 
+                    icon: "fab fa-youtube", 
+                    color: "bg-red-600 hover:bg-red-700", 
+                    url: "https://www.youtube.com/@GROUPEISI-TV",
+                    label: "YouTube"
+                  },
+                  { 
+                    icon: "fab fa-instagram", 
+                    color: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600", 
+                    url: "https://www.instagram.com/groupeisi/",
+                    label: "Instagram"
+                  }
                 ].map((social, index) => (
                   <motion.a 
                     key={index}
-                    href="#"
-                    className={`w-10 h-10 ${social.color} rounded-full flex items-center justify-center text-white transition-all`}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-12 h-12 ${social.color} rounded-full flex items-center justify-center text-white transition-all shadow-md hover:shadow-lg`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    title={social.label}
                   >
-                    <span className="material-icons text-sm">{social.icon}</span>
+                    <i className={`${social.icon} text-lg`}></i>
                   </motion.a>
                 ))}
               </div>
@@ -552,19 +588,21 @@ const Contact = () => {
                     <p className="text-navy-600">Veuillez sélectionner un campus pour afficher sa localisation</p>
                   </div>
                 ) : (
-                  <>
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-                      <Loader2 className="h-10 w-10 animate-spin text-primary" />
-                    </div>
-                    <iframe 
-                      src={activeMap.url} 
-                      className="w-full h-full border-0" 
-                      allowFullScreen 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title={`Carte du campus ${activeMap.name}`}
-                    ></iframe>
-                  </>
+                  <iframe 
+                    src={activeMap.url} 
+                    className="w-full h-full border-0" 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Carte du campus ${activeMap.name}`}
+                    onLoad={() => {
+                      // Carte chargée avec succès
+                      console.log(`Carte du campus ${activeMap.name} chargée`);
+                    }}
+                    onError={() => {
+                      console.error(`Erreur de chargement de la carte pour ${activeMap.name}`);
+                    }}
+                  ></iframe>
                 )}
               </div>
             </motion.div>
@@ -633,7 +671,7 @@ const Contact = () => {
             ))}
           </div>
           
-          <motion.div 
+          {/* <motion.div 
             className="text-center mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -651,7 +689,7 @@ const Contact = () => {
               <span className="material-icons mr-2">contact_support</span>
               Contactez notre équipe support
             </motion.button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
