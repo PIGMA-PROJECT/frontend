@@ -1,4 +1,3 @@
-//deja bon
 import React, { useState } from 'react';
 import { 
   FiFile, 
@@ -17,6 +16,7 @@ import {
   FiDownload
 } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '@/contexts/AuthContext';
 
 // Types pour les données
 interface Comment {
@@ -36,14 +36,16 @@ interface MediaItem {
   url: string;
   likes: number;
   liked: boolean;
+  saved: boolean;
   comments: Comment[];
   important?: boolean;
   description?: string;
   category?: string;
+  niveau?: 'licence' | 'master' | 'autres' | 'all';
 }
 
-// Composant principal
 const Mediatheque: React.FC = () => {
+  const { user } = useAuth();
   const [selectedFolder, setSelectedFolder] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showViewModal, setShowViewModal] = useState(false);
@@ -61,152 +63,108 @@ const Mediatheque: React.FC = () => {
     { id: 'important', name: 'Documents importants', count: 4 },
   ];
   
-  // Données fictives pour les documents importants
-  const importantDocuments: MediaItem[] = [
-    {
-      id: 101,
-      name: 'Canevas de mémoire.pdf',
-      type: 'document',
-      size: '1.2 MB',
-      uploadedBy: 'Admin',
-      date: '01/01/2025',
-      url: 'https://example.com/canevas.pdf',
-      likes: 25,
-      liked: false,
-      comments: [
-        { id: 1, author: 'Dr. Ahmed Diop', text: 'Ce canevas est à utiliser obligatoirement pour tous les mémoires.', date: '02/01/2025' }
-      ],
-      important: true,
-      description: 'Format officiel à utiliser pour tous les mémoires de fin d\'études.',
-      category: 'Modèle'
-    },
-    {
-      id: 102,
-      name: 'Guide de rédaction.pdf',
-      type: 'document',
-      size: '3.5 MB',
-      uploadedBy: 'Admin',
-      date: '01/01/2025',
-      url: 'https://example.com/guide.pdf',
-      likes: 18,
-      liked: false,
-      comments: [],
-      important: true,
-      description: 'Guide complet détaillant les règles de rédaction académique pour les mémoires.',
-      category: 'Guide'
-    },
-    {
-      id: 103,
-      name: 'Calendrier académique 2025.pdf',
-      type: 'document',
-      size: '850 KB',
-      uploadedBy: 'Admin',
-      date: '15/12/2024',
-      url: 'https://example.com/calendrier.pdf',
-      likes: 32,
-      liked: true,
-      comments: [
-        { id: 1, author: 'Marie Faye', text: 'Merci pour le calendrier mis à jour.', date: '16/12/2024' }
-      ],
-      important: true,
-      description: 'Calendrier officiel de l\'année académique 2025 avec toutes les dates importantes.',
-      category: 'Planning'
-    },
-    {
-      id: 104,
-      name: 'Charte graphique ISI.pdf',
-      type: 'document',
-      size: '4.2 MB',
-      uploadedBy: 'Admin',
-      date: '10/01/2025',
-      url: 'https://example.com/charte.pdf',
-      likes: 15,
-      liked: false,
-      comments: [],
-      important: true,
-      description: 'Charte graphique officielle de l\'Institut à respecter pour tous les documents.',
-      category: 'Modèle'
-    }
-  ];
-  
-  // Données fictives pour les médias réguliers
+  // Documents disponibles selon le niveau
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([
-    { 
-      id: 1, 
-      name: 'presentation.pdf', 
-      type: 'document', 
-      size: '2.5 MB', 
-      uploadedBy: 'Admin', 
-      date: '12/05/2025',
-      url: 'https://example.com/presentation.pdf',
-      likes: 8,
+    {
+      id: 1,
+      name: 'Méthodologie de recherche.pdf',
+      type: 'document',
+      size: '2.1 MB',
+      uploadedBy: 'Dr. Aminata Diop',
+      date: '15/05/2025',
+      url: '#',
+      likes: 24,
       liked: false,
+      saved: true,
       comments: [
-        { id: 1, author: 'Dr. Ahmed Diop', text: 'Très bonne présentation, merci pour le partage.', date: '13/05/2025' },
-        { id: 2, author: 'Marie Faye', text: 'Je vais l\'utiliser pour mon cours.', date: '14/05/2025' }
-      ]
+        { id: 1, author: 'Moussa Kane', text: 'Très utile pour mon mémoire !', date: '16/05/2025' }
+      ],
+      important: true,
+      description: 'Guide méthodologique pour la rédaction de mémoires académiques',
+      category: 'Méthodologie',
+      niveau: user?.niveau === 'autres' ? 'all' : 'licence'
     },
-    { 
-      id: 2, 
-      name: 'logo.png', 
-      type: 'image', 
-      size: '540 KB', 
-      uploadedBy: 'Admin', 
+    {
+      id: 2,
+      name: 'Template PowerPoint ISI.pptx',
+      type: 'document',
+      size: '1.8 MB',
+      uploadedBy: 'Admin',
       date: '10/05/2025',
-      url: 'https://example.com/logo.png',
-      likes: 5,
+      url: '#',
+      likes: 18,
       liked: true,
-      comments: [
-        { id: 1, author: 'Fatou Sow', text: 'Super design !', date: '11/05/2025' }
-      ]
+      saved: false,
+      comments: [],
+      important: true,
+      description: 'Modèle officiel pour les présentations',
+      category: 'Template',
+      niveau: 'all'
     },
-    { 
-      id: 3, 
-      name: 'rapport.docx', 
-      type: 'document', 
-      size: '1.2 MB', 
-      uploadedBy: 'Admin', 
+    {
+      id: 3,
+      name: 'Cours Intelligence Artificielle.mp4',
+      type: 'video',
+      size: '125 MB',
+      uploadedBy: 'Prof. Ibrahima Fall',
       date: '08/05/2025',
-      url: 'https://example.com/rapport.docx',
-      likes: 3,
-      liked: false,
-      comments: []
-    },
-    { 
-      id: 4, 
-      name: 'cours_intro.mp4', 
-      type: 'video', 
-      size: '45 MB', 
-      uploadedBy: 'Admin', 
-      date: '05/05/2025',
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      likes: 45,
+      liked: false,
+      saved: true,
+      comments: [
+        { id: 1, author: 'Fatou Ndiaye', text: 'Excellent cours, merci professeur !', date: '09/05/2025' }
+      ],
+      niveau: user?.niveau === 'autres' ? 'all' : 'master'
+    },
+    {
+      id: 4,
+      name: 'Logo ISI officiel.png',
+      type: 'image',
+      size: '340 KB',
+      uploadedBy: 'Admin',
+      date: '05/05/2025',
+      url: 'https://via.placeholder.com/400x300/2563eb/ffffff?text=Logo+ISI',
       likes: 12,
       liked: false,
-      comments: [
-        { id: 1, author: 'Dr. Ousmane Fall', text: 'Vidéo très instructive.', date: '06/05/2025' },
-        { id: 2, author: 'Dr. Ibrahima Ndiaye', text: 'Excellente introduction, merci !', date: '07/05/2025' }
-      ]
+      saved: false,
+      comments: [],
+      niveau: 'all'
     },
-    { 
-      id: 5, 
-      name: 'banner.jpg', 
-      type: 'image', 
-      size: '1.8 MB', 
-      uploadedBy: 'Admin', 
+    {
+      id: 5,
+      name: 'Exemples de mémoires.pdf',
+      type: 'document',
+      size: '8.2 MB',
+      uploadedBy: 'Dr. Ousmane Dieng',
       date: '01/05/2025',
-      url: 'https://example.com/banner.jpg',
-      likes: 7,
-      liked: false,
+      url: '#',
+      likes: 67,
+      liked: true,
+      saved: true,
       comments: [
-        { id: 1, author: 'Marie Faye', text: 'Belle image !', date: '02/05/2025' }
-      ]
-    },
+        { id: 1, author: 'Awa Seck', text: 'Ces exemples m\'ont beaucoup aidée', date: '02/05/2025' },
+        { id: 2, author: 'Modou Thiam', text: 'Parfait pour avoir une idée de la structure', date: '03/05/2025' }
+      ],
+      important: true,
+      description: 'Collection de mémoires exemplaires des années précédentes',
+      category: 'Exemples',
+      niveau: user?.niveau === 'autres' ? 'all' : 'licence'
+    }
   ]);
 
+  // Documents importants filtrés
+  const importantDocuments = mediaItems.filter(item => item.important);
+
   // Tous les médias (importants + réguliers)
-  const allMediaItems = [...importantDocuments, ...mediaItems];
+  const allMediaItems = mediaItems;
   
   const filteredItems = allMediaItems.filter(item => {
+    // Vérifier le niveau d'accès
+    if (item.niveau && item.niveau !== 'all' && item.niveau !== user?.niveau) {
+      return false;
+    }
+
     // Filtre par dossier spécial "important"
     if (selectedFolder === 'important') {
       return item.important === true && item.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -215,7 +173,9 @@ const Mediatheque: React.FC = () => {
     // Filtre par dossier
     const matchesFolder = selectedFolder === 'all' || item.type === selectedFolder.replace('s', '');
     // Filtre par recherche
-    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         item.category?.toLowerCase().includes(searchQuery.toLowerCase());
     // Filtre si on veut voir uniquement les documents importants
     const matchesImportance = showImportantDocsOnly ? item.important : true;
     
@@ -229,7 +189,6 @@ const Mediatheque: React.FC = () => {
   };
   
   const toggleLike = (itemId: number) => {
-    // Mettre à jour les médias réguliers
     setMediaItems(prev => prev.map(item => {
       if (item.id === itemId) {
         return {
@@ -241,7 +200,6 @@ const Mediatheque: React.FC = () => {
       return item;
     }));
     
-    // Si l'élément est actuellement en cours de visionnage, mettre à jour également currentItem
     if (currentItem && currentItem.id === itemId) {
       setCurrentItem(prev => {
         if (!prev) return null;
@@ -253,34 +211,43 @@ const Mediatheque: React.FC = () => {
       });
     }
   };
+
+  const toggleSave = (itemId: number) => {
+    setMediaItems(prev => prev.map(item => {
+      if (item.id === itemId) {
+        return { ...item, saved: !item.saved };
+      }
+      return item;
+    }));
+
+    if (currentItem && currentItem.id === itemId) {
+      setCurrentItem(prev => {
+        if (!prev) return null;
+        return { ...prev, saved: !prev.saved };
+      });
+    }
+  };
   
   const handleAddComment = () => {
     if (!currentItem || !newComment.trim()) return;
     
     const newCommentObj: Comment = {
       id: Date.now(),
-      author: 'Admin',
+      author: user?.name || 'Étudiant',
       text: newComment.trim(),
       date: new Date().toLocaleDateString('fr-FR')
     };
     
-    // Déterminer si le document actuel est un document important
-    const isImportant = importantDocuments.some(doc => doc.id === currentItem.id);
+    setMediaItems(prev => prev.map(item => {
+      if (item.id === currentItem.id) {
+        return {
+          ...item,
+          comments: [...item.comments, newCommentObj]
+        };
+      }
+      return item;
+    }));
     
-    if (!isImportant) {
-      // Mettre à jour les médias réguliers
-      setMediaItems(prev => prev.map(item => {
-        if (item.id === currentItem.id) {
-          return {
-            ...item,
-            comments: [...item.comments, newCommentObj]
-          };
-        }
-        return item;
-      }));
-    }
-    
-    // Dans tous les cas, mettre à jour currentItem
     setCurrentItem(prev => {
       if (!prev) return null;
       return {
@@ -380,7 +347,6 @@ const Mediatheque: React.FC = () => {
           </div>
         );
       case 'video':
-        // Pour les vidéos, extraire l'ID YouTube si c'est un lien YouTube
         const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
         const match = currentItem.url.match(youtubeRegex);
         const videoId = match ? match[1] : null;
@@ -633,7 +599,12 @@ const Mediatheque: React.FC = () => {
                               {getIcon(item.type, item.important)}
                             </div>
                             <div>
-                              <div className="font-medium text-gray-900">{item.name}</div>
+                              <div className="font-medium text-gray-900 flex items-center">
+                                {item.name}
+                                {item.saved && (
+                                  <FiHeart className="ml-2 h-4 w-4 text-red-500 fill-current" />
+                                )}
+                              </div>
                               <div className="text-sm text-gray-500">
                                 {item.size}
                                 {item.category && (
@@ -673,13 +644,22 @@ const Mediatheque: React.FC = () => {
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <button 
-                            onClick={() => handleViewItem(item)}
-                            className="text-primary hover:text-primary-700 flex items-center justify-end"
-                          >
-                            <FiEye className="h-5 w-5 mr-1" />
-                            <span>Consulter</span>
-                          </button>
+                          <div className="flex items-center justify-end gap-2">
+                            <button
+                              onClick={() => toggleSave(item.id)}
+                              className={`p-1 rounded ${item.saved ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`}
+                              title={item.saved ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                            >
+                              <FiHeart className={`h-4 w-4 ${item.saved ? 'fill-current' : ''}`} />
+                            </button>
+                            <button 
+                              onClick={() => handleViewItem(item)}
+                              className="text-primary hover:text-primary-700 flex items-center justify-end"
+                            >
+                              <FiEye className="h-5 w-5 mr-1" />
+                              <span>Consulter</span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))
@@ -712,6 +692,13 @@ const Mediatheque: React.FC = () => {
                   )}
                 </div>
                 <div className="flex items-center space-x-3">
+                  <button
+                    onClick={() => toggleSave(currentItem.id)}
+                    className={`flex items-center ${currentItem.saved ? 'text-red-500' : 'text-gray-500'} hover:text-red-500`}
+                    title={currentItem.saved ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                  >
+                    <FiHeart className={`h-5 w-5 mr-1 ${currentItem.saved ? 'fill-current' : ''}`} />
+                  </button>
                   <button 
                     onClick={() => toggleLike(currentItem.id)}
                     className={`flex items-center ${currentItem.liked ? 'text-red-500' : 'text-gray-500'} hover:text-red-500`}

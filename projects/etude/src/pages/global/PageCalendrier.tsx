@@ -390,16 +390,6 @@ const PageCalendrier: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <Card className="col-span-2 relative">
-          {/* Légende déplacée au-dessus du calendrier */}
-          <div className="mb-4 flex flex-col items-center justify-center">
-            <div className="font-medium mb-2">Légende :</div>
-            <div className="flex flex-row gap-6 p-2 bg-gray-50 rounded-lg shadow-sm">
-              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-blue-500"></div><span>Réunion</span></div>
-              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-purple-500"></div><span>Séminaire</span></div>
-              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-red-500"></div><span>Date limite</span></div>
-              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-gray-500"></div><span>Autre</span></div>
-            </div>
-          </div>
           <CardHeader className="pb-2">
             <div className="flex justify-between items-center">
               <div>
@@ -475,6 +465,29 @@ const PageCalendrier: React.FC = () => {
               Aujourd'hui
             </Button>
           </CardFooter>
+
+          {/* Légende des types d'événements */}
+          <div className="absolute bottom-20 right-4 bg-white p-3 rounded-md shadow-sm border text-sm">
+            <div className="font-medium mb-1">Légende :</div>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                <span>Réunion</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+                <span>Séminaire</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <span>Date limite</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+                <span>Autre</span>
+              </div>
+            </div>
+          </div>
         </Card>
 
         <Card className="col-span-1 lg:col-span-2">
