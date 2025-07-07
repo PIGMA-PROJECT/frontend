@@ -341,12 +341,12 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, roleUtilisateur }) => {
       icone: <User className="mr-2 h-5 w-5" />,
       role: 'all'
     },
-    {
-      nom: 'Paramètres',
-      chemin: '/settings',
-      icone: <Settings className="mr-2 h-5 w-5" />,
-      role: 'all'
-    },
+    // {
+    //   nom: 'Paramètres',
+    //   chemin: '/settings',
+    //   icone: <Settings className="mr-2 h-5 w-5" />,
+    //   role: 'all'
+    // },
   ];
 
   const menuFiltre = elementsMenu.filter(

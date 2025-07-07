@@ -163,11 +163,11 @@ const Sidebar: React.FC = () => {
       icone: <FiUser className="mr-2 h-5 w-5" />,
       chemin: '/profile',
     },
-    {
-      nom: 'Paramètres',
-      icone: <FiSettings className="mr-2 h-5 w-5" />,
-      chemin: '/settings',
-    },
+    // {
+    //   nom: 'Paramètres',
+    //   icone: <FiSettings className="mr-2 h-5 w-5" />,
+    //   chemin: '/settings',
+    // },
   ];
 
   const basculerMenu = (nomMenu: string) => {
