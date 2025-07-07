@@ -152,7 +152,7 @@ const MediathequePublications: React.FC = () => {
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'image': return <FiImage className="h-5 w-5 text-blue-500" />;
+      case 'image': return <FiImage className="h-5 w-5 text-primary" />;
       case 'video': return <FiFilm className="h-5 w-5 text-purple-500" />;
       default: return <FiFileText className="h-5 w-5 text-gray-500" />;
     }
@@ -175,7 +175,7 @@ const MediathequePublications: React.FC = () => {
           <div className="flex flex-col space-y-2">
             <button 
               onClick={() => handlePreview(publication)}
-              className="flex items-center justify-center px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600"
+              className="flex items-center justify-center px-3 py-1 bg-primary text-primary-foreground rounded text-sm hover:bg-primary/90"
             >
               <FiEye className="h-3 w-3 mr-1" />
               Aperçu
@@ -190,7 +190,7 @@ const MediathequePublications: React.FC = () => {
           <div className="flex flex-col space-y-2">
             <button 
               onClick={() => handlePreview(publication)}
-              className="flex items-center justify-center px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600"
+              className="flex items-center justify-center px-3 py-1 bg-primary text-primary-foreground rounded text-sm hover:bg-primary/90"
             >
               <FiEye className="h-3 w-3 mr-1" />
               Aperçu
@@ -251,7 +251,7 @@ const MediathequePublications: React.FC = () => {
           <div className="text-sm text-gray-600">Publiées</div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
-          <div className="text-2xl font-bold text-blue-600">{stats.totalViews}</div>
+          <div className="text-2xl font-bold text-primary">{stats.totalViews}</div>
           <div className="text-sm text-gray-600">Vues totales</div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
@@ -268,13 +268,13 @@ const MediathequePublications: React.FC = () => {
             placeholder="Rechercher dans mes publications..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           />
           
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             {Object.entries(statusLabels).map(([value, label]) => (
               <option key={value} value={value}>{label}</option>
@@ -339,7 +339,7 @@ const MediathequePublications: React.FC = () => {
                 {/* Tags - hauteur fixe */}
                 <div className="flex flex-wrap gap-1 mb-4 min-h-[24px]">
                   {publication.tags.slice(0, 3).map(tag => (
-                    <span key={tag} className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full">
+                    <span key={tag} className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
                       #{tag}
                     </span>
                   ))}
@@ -488,7 +488,7 @@ const MediathequePublications: React.FC = () => {
                   <h3 className="font-semibold text-gray-800 mb-3">Mots-clés</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedPublication.tags.map(tag => (
-                      <span key={tag} className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                      <span key={tag} className="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">
                         #{tag}
                       </span>
                     ))}
@@ -509,7 +509,7 @@ const MediathequePublications: React.FC = () => {
                         <div className="text-sm text-gray-600">Likes</div>
                       </div>
                       <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-xl font-bold text-blue-600">{selectedPublication.comments}</div>
+                        <div className="text-xl font-bold text-primary">{selectedPublication.comments}</div>
                         <div className="text-sm text-gray-600">Commentaires</div>
                       </div>
                     </div>

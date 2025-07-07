@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, userRole }) => {
 
   return (
     <header className="bg-white shadow-sm z-30 sticky top-0">
-      <div className="px-4 py-3 flex items-center justify-between">
+      <div className="px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <button
             onClick={toggleSidebar}

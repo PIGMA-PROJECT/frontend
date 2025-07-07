@@ -277,7 +277,7 @@ const Messages: React.FC = () => {
                 </div>
                 
                 {/* Messages */}
-                <div className="flex-1 p-4 overflow-y-auto flex flex-col-reverse">
+                <div className="flex-1 p-4 overflow-y-auto" style={{ minHeight: '500px', maxHeight: 'calc(100vh - 180px)' }}>
                   <div ref={messagesEndRef} />
                   
                   {activeConversation.messages.map((message, index) => {
@@ -288,6 +288,7 @@ const Messages: React.FC = () => {
                       <div
                         key={message.id}
                         className={`mb-4 max-w-[80%] ${isAdmin ? 'self-end' : 'self-start'}`}
+                        style={{ minHeight: '200px' }}
                       >
                         <div className={`flex items-start ${isAdmin ? 'flex-row-reverse' : ''}`}>
                           {/* Avatar (seulement pour les messages reÃ§us) */}
@@ -303,9 +304,8 @@ const Messages: React.FC = () => {
                           
                           <div className={`${isAdmin ? 'mr-2' : 'ml-2'}`}>
                             {/* Bulle de message */}
-                            <div className={`p-3 rounded-lg ${
-                              isAdmin ? 'bg-primary text-white' : 'bg-gray-100 text-gray-800'
-                            }`}>
+                            <div className={`p-3 ${isAdmin ? 'bg-primary text-white' : 'bg-gray-100 text-gray-800'}`}
+                                 style={{ borderRadius: 0 }}>
                               <p>{message.content}</p>
                               
                               {/* PiÃ¨ces jointes */}
@@ -324,11 +324,6 @@ const Messages: React.FC = () => {
                                   ))}
                                 </div>
                               )}
-                            </div>
-                            
-                            {/* Horodatage */}
-                            <div className={`text-xs text-gray-500 mt-1 ${isAdmin ? 'text-right' : ''}`}>
-                              {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             </div>
                           </div>
                         </div>
@@ -426,7 +421,7 @@ const Messages: React.FC = () => {
                                 className="absolute bottom-10 left-0 bg-white rounded-lg shadow-lg p-2 w-64 h-48 overflow-y-auto"
                               >
                                 <div className="grid grid-cols-8 gap-1">
-                                  {["í¸Š", "í¸‚", "í¸", "í±", "í¹", "í±‹", "í¾‰", "â¤ï¸", "í´”", "í¸¢", "í¹„", "í¸Ž", "í´©", "í±", "í´¥", "âœ…", "âŒ", "â­", "íº€", "í²¡", "í³", "í³…", "í´", "í²¬"].map(emoji => (
+                                  {["ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "â¤ï¸", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "âœ…", "âŒ", "â­", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½"].map(emoji => (
                                     <button
                                       key={emoji}
                                       type="button"

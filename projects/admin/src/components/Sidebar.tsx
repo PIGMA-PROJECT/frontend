@@ -189,11 +189,11 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="w-64 h-full bg-white shadow-lg flex flex-col">
-      <div className="p-4 border-b border-gray-200">
+      <div className="p-2 border-b border-gray-200">
         <div className="flex items-center justify-center">
           <Logo />
         </div>
-        <div className="mt-2 text-xs text-center text-gray-600">
+        <div className="mt-[9px] text-xs text-center text-gray-600">
           Plateforme d'administration
         </div>
       </div>

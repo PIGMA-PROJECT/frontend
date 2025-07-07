@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, userLevel, userName, use
 
   return (
     <header className="bg-white shadow-sm z-30 sticky top-0">
-      <div className="px-4 py-3 flex items-center justify-between">
+      <div className="px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <button
             onClick={toggleSidebar}
@@ -292,14 +292,14 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, userLevel, userName, use
                         <span>Messagerie</span>
                       </Link>
                     )}
-                    <Link 
+                    {/* <Link 
                       to="/settings" 
                       className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setShowProfileMenu(false)}
                     >
                       <Settings className="mr-3 h-4 w-4 text-gray-400" />
                       <span>Paramètres</span>
-                    </Link>
+                    </Link> */}
                     <Link 
                       to="/help" 
                       className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

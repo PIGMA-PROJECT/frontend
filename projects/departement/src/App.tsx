@@ -27,7 +27,6 @@ import Professors from "./pages/Professors";
 import ProfessorAdd from "./pages/ProfessorAdd";
 import ProfessorDetail from "./pages/ProfessorDetail";
 import Chatbot from "./pages/Chatbot";
-import ChatHistory from "./pages/ChatHistory";
 import Index from "./pages/Index";
 import PageCalendrier from "./pages/PageCalendrier";
 import PageAjoutEvenement from "./pages/PageAjoutEvenement";
@@ -35,6 +34,7 @@ import PageReunions from "./pages/PageReunions";
 import PageModifierEvenement from "./pages/PageModifierEvenement";
 import PageDetailEvenement from "./pages/PageDetailEvenement";
 import PageSoutenances from "./pages/PageSoutenances";
+import Messagerie from "./pages/Messagerie";
 
 const queryClient = new QueryClient();
 
@@ -87,9 +87,12 @@ const App = () => (
             <Route path="/calendrier/ajouter" element={<MainLayout><PageAjoutEvenement /></MainLayout>} />
             <Route path="/calendrier/details/:id" element={<MainLayout><PageDetailEvenement /></MainLayout>} />
 
+            {/* Notification */}
+            <Route path="/notifications/messages" element={<MainLayout><Messagerie /></MainLayout>} />
+
+
             {/* Chatbot */}
             <Route path="/chatbot" element={<MainLayout><Chatbot /></MainLayout>} />
-            <Route path="/chatbot/history" element={<MainLayout><ChatHistory /></MainLayout>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

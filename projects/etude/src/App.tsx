@@ -19,7 +19,6 @@ import Login from "./pages/auth/Login";
 
 // Pages communes (tous niveaux)
 import Chatbot from "./pages/communes/Chatbot";
-import ChatHistory from "./pages/communes/ChatHistory";
 import Mediatheque from "./pages/communes/Mediatheque";
 import MediathequeDetail from "./pages/communes/MediathequeDetail";
 import MediathequeSaved from "./pages/communes/MediathequeSaved";
@@ -34,7 +33,8 @@ import EncadrantDetail from "./pages/licence-master/EncadrantDetail";
 import Encadrants from "./pages/licence-master/Encadrants";
 import PanelEncadrement from "./pages/licence-master/PanelEncadrement";
 import EspaceTravail from "./pages/licence-master/EspaceTravail";
-import MessagerieEncadrant from "./pages/licence-master/MessagerieEncadrant";
+import Messagerie from "./pages/licence-master/Messagerie";
+import Evenements from "./pages/global/Evenements";
 
 // Pages Licence/Master
 // import Encadrants from "./pages/licence-master/Encadrants";
@@ -45,8 +45,6 @@ import MessagerieEncadrant from "./pages/licence-master/MessagerieEncadrant";
 // import DepotDossier from "./pages/licence-master/DepotDossier";
 // import DossierSuivi from "./pages/licence-master/DossierSuivi";
 // import Messagerie from "./pages/licence-master/Messagerie";
-// import MessagerieEncadrant from "./pages/licence-master/MessagerieEncadrant";
-// import MessagerieVisiteurs from "./pages/licence-master/MessagerieVisiteurs";
 
 const queryClient = new QueryClient();
 
@@ -77,11 +75,9 @@ const App = () => (
 
             {/* Chatbot */}
             <Route path="/chatbot" element={<MainLayout><Chatbot /></MainLayout>} />
-            <Route path="/chatbot/history" element={<MainLayout><ChatHistory /></MainLayout>} />
 
             {/* Événements */}
-            <Route path="/evenements/calendrier" element={<MainLayout><EvenementsCalendrier /></MainLayout>} />
-            <Route path="/evenements/soutenances" element={<MainLayout><EvenementsSoutenances /></MainLayout>} />
+            <Route path="/evenements" element={<MainLayout><Evenements /></MainLayout>} />
 
             {/* Profil et paramètres */}
             <Route path="/profile" element={<MainLayout><Profile /></MainLayout>} />
@@ -102,8 +98,7 @@ const App = () => (
 
             {/* Messagerie */}
             {/* <Route path="/messagerie" element={<MainLayout><Messagerie /></MainLayout>} />*/}
-            <Route path="/messagerie/encadrant" element={<MainLayout><MessagerieEncadrant /></MainLayout>} />
-            {/* <Route path="/messagerie/visiteurs" element={<MainLayout><MessagerieVisiteurs /></MainLayout>} />  */}
+            <Route path="/messagerie" element={<MainLayout><Messagerie /></MainLayout>} />
 
             {/* =================== PAGES HÉRITÉES (À ADAPTER) =================== */}
             

@@ -55,6 +55,12 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
       niveau: 'all'
     },
     {
+      nom: 'Événements',
+      chemin: '/evenements',
+      icone: <Calendar className="mr-2 h-5 w-5" />,
+      niveau: 'all'
+    },
+    {
       nom: 'Médiathèque',
       icone: <Image className="mr-2 h-5 w-5" />,
       niveau: 'all',
@@ -81,41 +87,9 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
     },
     {
       nom: 'Chatbot',
+      chemin: '/chatbot',
       icone: <MessageSquare className="mr-2 h-5 w-5" />,
-      niveau: 'all',
-      sousmenu: [
-        {
-          nom: 'Discussion',
-          icone: <MessageSquare className="mr-2 h-4 w-4" />,
-          chemin: '/chatbot',
-          niveau: 'all'
-        },
-        {
-          nom: 'Historique',
-          icone: <List className="mr-2 h-4 w-4" />,
-          chemin: '/chatbot/history',
-          niveau: 'all'
-        },
-      ],
-    },
-    {
-      nom: 'Événements',
-      icone: <Calendar className="mr-2 h-5 w-5" />,
-      niveau: 'all',
-      sousmenu: [
-        {
-          nom: 'Calendrier',
-          icone: <Calendar className="mr-2 h-4 w-4" />,
-          chemin: '/evenements/soutenances',
-          niveau: 'autres'
-        },
-        {
-          nom: 'Calendrier complet',
-          icone: <Calendar className="mr-2 h-4 w-4" />,
-          chemin: '/evenements/calendrier',
-          niveau: 'licence' // Licence et Master voient plus d'événements
-        },
-      ],
+      niveau: 'all'
     },
     {
       nom: 'Encadrements',
@@ -123,13 +97,13 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
       niveau: 'licence', // Seulement Licence et Master
       sousmenu: [
         {
-          nom: 'Liste des encadrants',
+          nom: 'Encadrants',
           icone: <Users className="mr-2 h-4 w-4" />,
           chemin: '/encadrants',
           niveau: 'licence'
         },
         {
-          nom: 'Mon panel d\'encadrement',
+          nom: 'Mon panel',
           icone: <AlertCircle className="mr-2 h-4 w-4" />,
           chemin: '/encadrement/panel',
           niveau: 'licence'
@@ -148,13 +122,13 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
       niveau: 'licence', // Seulement Licence et Master
       sousmenu: [
         {
-          nom: 'Suivi de dossier',
+          nom: 'Suivi',
           icone: <List className="mr-2 h-4 w-4" />,
           chemin: '/dossier/suivi',
           niveau: 'licence'
         },
         {
-          nom: 'Dépôt de dossier',
+          nom: 'Dépôt',
           icone: <Upload className="mr-2 h-4 w-4" />,
           chemin: '/dossier/depot',
           niveau: 'licence'
@@ -162,23 +136,10 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
       ],
     },
     {
-      nom: 'Messagerie',
+      nom: 'Messages',
+      chemin: '/messagerie',
       icone: <Mail className="mr-2 h-5 w-5" />,
-      niveau: 'licence', // Seulement Licence et Master
-      sousmenu: [
-        {
-          nom: 'Discussion avec encadrant',
-          icone: <MessageSquare className="mr-2 h-4 w-4" />,
-          chemin: '/messagerie/encadrant',
-          niveau: 'licence'
-        },
-        {
-          nom: 'Messages visiteurs',
-          icone: <Mail className="mr-2 h-4 w-4" />,
-          chemin: '/messagerie/visiteurs',
-          niveau: 'licence'
-        },
-      ],
+      niveau: 'licence' // Seulement Licence et Master
     },
     {
       nom: 'Profil',
@@ -186,12 +147,12 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
       icone: <User className="mr-2 h-5 w-5" />,
       niveau: 'all'
     },
-    {
-      nom: 'Paramètres',
-      chemin: '/settings',
-      icone: <Settings className="mr-2 h-5 w-5" />,
-      niveau: 'all'
-    },
+    // {
+    //   nom: 'Paramètres',
+    //   chemin: '/settings',
+    //   icone: <Settings className="mr-2 h-5 w-5" />,
+    //   niveau: 'all'
+    // },
   ];
 
   // Filtrer les éléments selon le niveau de l'étudiant
@@ -223,11 +184,11 @@ const Sidebar: React.FC<PropsSidebar> = ({ estVisible, niveauEtudiant }) => {
 
   return (
     <div className="w-64 h-full bg-white shadow-lg flex flex-col">
-      <div className="p-4 border-b border-gray-200">
+      <div className="p-2 border-b border-gray-200">
         <div className="flex items-center justify-center">
           <Logo />
         </div>
-        <div className="mt-2 text-xs text-center text-gray-600">
+        <div className="mt-[9px] text-xs text-center text-gray-600">
           Étudiant {niveauEtudiant.charAt(0).toUpperCase() + niveauEtudiant.slice(1)}
         </div>
       </div>

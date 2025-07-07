@@ -23,7 +23,7 @@ import PageDetailEvenement from './pages/calendrier/PageDetailEvenement';
 
 const App: React.FC = () => {
   return (
-    <Router basename="/admin">
+    <Router basename="/">
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />

@@ -293,7 +293,7 @@ const Encadrants: React.FC = () => {
             <FiZap className="h-4 w-4 mr-2" />
             Suggestions IA
           </button>
-          <div className="text-sm text-gray-600 bg-blue-50 px-3 py-2 rounded-lg">
+                          <div className="text-sm text-gray-600 bg-primary/10 px-3 py-2 rounded-lg">
             {filteredEncadrants.length} encadrant{filteredEncadrants.length > 1 ? 's' : ''} trouvé{filteredEncadrants.length > 1 ? 's' : ''}
           </div>
         </div>
@@ -431,7 +431,7 @@ const Encadrants: React.FC = () => {
       {/* Statistiques rapides */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
-          <div className="text-2xl font-bold text-blue-600">{mockEncadrants.length}</div>
+                          <div className="text-2xl font-bold text-primary">{mockEncadrants.length}</div>
           <div className="text-sm text-gray-600">Total encadrants</div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
@@ -462,7 +462,7 @@ const Encadrants: React.FC = () => {
               placeholder="Rechercher par nom, spécialité..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
@@ -471,7 +471,7 @@ const Encadrants: React.FC = () => {
           <select
             value={selectedSpecialite}
             onChange={(e) => setSelectedSpecialite(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             <option value="all">Toutes les spécialités</option>
             {specialites.map(spec => (
@@ -483,7 +483,7 @@ const Encadrants: React.FC = () => {
           <select
             value={selectedGrade}
             onChange={(e) => setSelectedGrade(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             <option value="all">Tous les grades</option>
             {grades.map(grade => (
@@ -495,7 +495,7 @@ const Encadrants: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             <option value="name">Trier par nom</option>
             <option value="rating">Trier par note</option>
@@ -539,7 +539,7 @@ const Encadrants: React.FC = () => {
                 {/* En-tête avec photo et statut */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
-                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
                       {getInitials(encadrant.name)}
                     </div>
                     <div className="ml-4">
@@ -557,7 +557,7 @@ const Encadrants: React.FC = () => {
                   <h4 className="font-medium text-gray-800 mb-2">{encadrant.specialite}</h4>
                   <div className="flex flex-wrap gap-1">
                     {encadrant.domaines.slice(0, 3).map(domaine => (
-                      <span key={domaine} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                      <span key={domaine} className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full">
                         {domaine}
                       </span>
                     ))}
@@ -578,7 +578,7 @@ const Encadrants: React.FC = () => {
                   </div>
                   <div className="text-center">
                     <div className="flex items-center justify-center mb-1">
-                      <FiAward className="h-4 w-4 text-blue-500 mr-1" />
+                      <FiAward className="h-4 w-4 text-primary mr-1" />
                       <span className="font-bold text-gray-800">{encadrant.nombreEtudiants}/{encadrant.maxEtudiants}</span>
                     </div>
                     <div className="text-xs text-gray-600">Étudiants</div>
@@ -618,7 +618,7 @@ const Encadrants: React.FC = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => navigate(`/encadrants/${encadrant.id}`)}
-                    className="flex-1 flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
+                    className="flex-1 flex items-center justify-center px-3 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-sm"
                   >
                     <FiEye className="h-4 w-4 mr-2" />
                     Voir profil
@@ -639,9 +639,9 @@ const Encadrants: React.FC = () => {
       )}
 
       {/* Information en bas */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-8">
-        <h3 className="font-semibold text-blue-800 mb-2">Comment choisir votre encadrant ?</h3>
-        <ul className="text-blue-700 text-sm space-y-1">
+      <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mt-8">
+        <h3 className="font-semibold text-primary mb-2">Comment choisir votre encadrant ?</h3>
+        <ul className="text-primary/80 text-sm space-y-1">
           <li>• Vérifiez que sa spécialité correspond à votre projet</li>
           <li>• Consultez ses publications et projets en cours</li>
           <li>• Prenez en compte sa disponibilité et son nombre d'étudiants actuel</li>

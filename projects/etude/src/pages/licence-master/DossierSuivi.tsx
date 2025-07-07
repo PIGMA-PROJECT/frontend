@@ -158,9 +158,9 @@ const getStatutConfig = (statut: string) => {
       };
     case 'En révision':
       return {
-        color: 'bg-blue-50 text-blue-700 border-blue-200',
+        color: 'bg-primary/10 text-primary border-primary/20',
         icon: FiAlertCircle,
-        iconColor: 'text-blue-600'
+        iconColor: 'text-primary'
       };
     case 'Refusé':
       return {
@@ -195,7 +195,7 @@ const getTypeIcon = (type: string) => {
 const getTypeColor = (type: string) => {
   switch (type) {
     case 'Mémoire': return 'bg-purple-100 text-purple-700';
-    case 'Rapport de Stage': return 'bg-blue-100 text-blue-700';
+    case 'Rapport de Stage': return 'bg-primary/10 text-primary';
     case 'Soutenance': return 'bg-green-100 text-green-700';
     default: return 'bg-slate-100 text-slate-700';
   }
@@ -257,9 +257,9 @@ const DossierSuivi: React.FC = () => {
                 <p className="text-slate-600 text-sm font-medium">Total Dossiers</p>
                 <p className="text-2xl font-bold text-slate-900">{statistiques.total}</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <FiFileText className="h-6 w-6 text-blue-600" />
-              </div>
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+          <FiFileText className="h-6 w-6 text-primary" />
+        </div>
             </div>
           </div>
 
@@ -291,11 +291,11 @@ const DossierSuivi: React.FC = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-600 text-sm font-medium">Moyenne Écrite</p>
-                <p className="text-2xl font-bold text-blue-600">{statistiques.moyenneEcrite.toFixed(1)}/20</p>
+                <p className="text-2xl font-bold text-primary">{statistiques.moyenneEcrite.toFixed(1)}/20</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <FiEdit3 className="h-6 w-6 text-blue-600" />
-              </div>
+                              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <FiEdit3 className="h-6 w-6 text-primary" />
+                </div>
             </div>
           </div>
 
@@ -487,7 +487,7 @@ const DossierSuivi: React.FC = () => {
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-2">
                     <div 
-                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                      className="bg-primary h-2 rounded-full transition-all duration-300"
                       style={{ width: `${dernier.progression}%` }}
                     ></div>
                   </div>
@@ -495,7 +495,7 @@ const DossierSuivi: React.FC = () => {
 
                 <div className="flex flex-wrap gap-3">
                   {dernier.fichier && (
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <button className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
                       <FiDownload className="h-4 w-4" />
                       <span>Télécharger ({dernier.taille})</span>
                     </button>
@@ -532,14 +532,14 @@ const DossierSuivi: React.FC = () => {
                         placeholder="Rechercher..."
                         value={recherche}
                         onChange={(e) => setRecherche(e.target.value)}
-                        className="pl-9 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="pl-9 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       />
                     </div>
                     
                     <select
                       value={filtreStatut}
                       onChange={(e) => setFiltreStatut(e.target.value)}
-                      className="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Tous statuts</option>
                       <option value="Soutenu">Soutenu</option>
@@ -653,7 +653,7 @@ const DossierSuivi: React.FC = () => {
                           <td className="px-6 py-4">
                             <div className="flex items-center space-x-2">
                               {dossier.fichier && (
-                                <button className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Télécharger">
+                                <button className="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Télécharger">
                                   <FiDownload className="h-4 w-4" />
                                 </button>
                               )}
@@ -693,7 +693,7 @@ const DossierSuivi: React.FC = () => {
               <div className="space-y-3">
                 <button 
                   onClick={() => setShowNouveauDossier(true)}
-                  className="w-full flex items-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="w-full flex items-center space-x-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                 >
                   <FiPlus className="h-4 w-4" />
                   <span>
@@ -712,9 +712,9 @@ const DossierSuivi: React.FC = () => {
             </div>
 
             {/* Conseils selon le niveau */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
-              <h3 className="text-lg font-bold text-blue-900 mb-3">💡 Conseils</h3>
-              <ul className="space-y-2 text-sm text-blue-800">
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6 border border-primary/20">
+              <h3 className="text-lg font-bold text-primary mb-3">💡 Conseils</h3>
+              <ul className="space-y-2 text-sm text-primary/80">
                 {isLicence ? (
                   <>
                     <li>• Choisissez une entreprise en rapport avec votre formation</li>
@@ -807,26 +807,26 @@ const DossierSuivi: React.FC = () => {
             <div className="bg-white rounded-xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-900 mb-4">Ressources Utiles</h3>
               <div className="space-y-3">
-                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-primary transition-colors">
                   <FiBook className="h-4 w-4" />
                   <span>
                     {isLicence ? 'Guide de rédaction rapport' : 'Guide de rédaction mémoire'}
                   </span>
                 </a>
-                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-primary transition-colors">
                   <FiFileText className="h-4 w-4" />
                   <span>Modèle de document</span>
                 </a>
-                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-primary transition-colors">
                   <FiMic className="h-4 w-4" />
                   <span>Conseils pour la soutenance</span>
                 </a>
-                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-primary transition-colors">
                   <FiCalendar className="h-4 w-4" />
                   <span>Calendrier académique</span>
                 </a>
                 {isLicence && (
-                  <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors">
+                  <a href="#" className="flex items-center space-x-2 text-slate-600 hover:text-primary transition-colors">
                     <FiBriefcase className="h-4 w-4" />
                     <span>Annuaire des entreprises</span>
                   </a>
@@ -948,7 +948,7 @@ const DossierSuivi: React.FC = () => {
                               <FiUser className="h-4 w-4 text-slate-600" />
                               <span className="text-slate-900">{membre}</span>
                               {index === 0 && (
-                                <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Président</span>
+                                <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Président</span>
                               )}
                             </div>
                           ))}
@@ -962,10 +962,10 @@ const DossierSuivi: React.FC = () => {
                         <h3 className="text-lg font-bold text-slate-900 mb-4">Évaluation</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                           {dossierSelectionne.note && (
-                            <div className="text-center p-4 bg-blue-50 rounded-lg">
-                              <FiEdit3 className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                              <p className="text-sm text-blue-600 font-medium">Note Écrite</p>
-                              <p className="text-2xl font-bold text-blue-900">{dossierSelectionne.note}/20</p>
+                            <div className="text-center p-4 bg-primary/5 rounded-lg">
+                              <FiEdit3 className="h-6 w-6 text-primary mx-auto mb-2" />
+                              <p className="text-sm text-primary font-medium">Note Écrite</p>
+                              <p className="text-2xl font-bold text-primary">{dossierSelectionne.note}/20</p>
                             </div>
                           )}
                           {dossierSelectionne.noteOrale && (
@@ -1004,15 +1004,15 @@ const DossierSuivi: React.FC = () => {
                         <h3 className="text-lg font-bold text-slate-900 mb-4">Document</h3>
                         <div className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg">
                           <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                              <FiFileText className="h-5 w-5 text-blue-600" />
+                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <FiFileText className="h-5 w-5 text-primary" />
                             </div>
                             <div>
                               <p className="font-medium text-slate-900">{dossierSelectionne.fichier}</p>
                               <p className="text-sm text-slate-600">{dossierSelectionne.taille}</p>
                             </div>
                           </div>
-                          <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                          <button className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
                             <FiDownload className="h-4 w-4" />
                             <span>Télécharger</span>
                           </button>
@@ -1026,7 +1026,7 @@ const DossierSuivi: React.FC = () => {
                     <div>
                       <h3 className="text-lg font-bold text-slate-900 mb-4">Actions</h3>
                       <div className="space-y-3">
-                        <button className="w-full flex items-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <button className="w-full flex items-center space-x-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
                           <FiEdit3 className="h-4 w-4" />
                           <span>Modifier</span>
                         </button>
@@ -1054,7 +1054,7 @@ const DossierSuivi: React.FC = () => {
                         </div>
                         <div className="w-full bg-slate-200 rounded-full h-3">
                           <div 
-                            className="bg-blue-600 h-3 rounded-full transition-all duration-300"
+                            className="bg-primary h-3 rounded-full transition-all duration-300"
                             style={{ width: `${dossierSelectionne.progression}%` }}
                           ></div>
                         </div>
@@ -1094,7 +1094,7 @@ const DossierSuivi: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">Encadreur</label>
-                      <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                      <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                         <option>Pr. Abdoulaye Ndiaye</option>
                         <option>Dr. Fatou Diop</option>
                         <option>M. Ousmane Kane</option>
@@ -1106,7 +1106,7 @@ const DossierSuivi: React.FC = () => {
                     {isMaster && (
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Mode de travail</label>
-                        <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                           <option value="individuel">Individuel</option>
                           <option value="binome">En binôme</option>
                         </select>
@@ -1121,7 +1121,7 @@ const DossierSuivi: React.FC = () => {
                           <label className="block text-sm font-medium text-slate-700 mb-2">Entreprise d'accueil</label>
                           <input 
                             type="text" 
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                             placeholder="Nom de l'entreprise"
                           />
                         </div>
@@ -1129,7 +1129,7 @@ const DossierSuivi: React.FC = () => {
                           <label className="block text-sm font-medium text-slate-700 mb-2">Maître de stage</label>
                           <input 
                             type="text" 
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                             placeholder="Nom du maître de stage"
                           />
                         </div>
@@ -1140,14 +1140,14 @@ const DossierSuivi: React.FC = () => {
                           <label className="block text-sm font-medium text-slate-700 mb-2">Date de début</label>
                           <input 
                             type="date" 
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                           />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-2">Date de fin</label>
                           <input 
                             type="date" 
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -1156,20 +1156,20 @@ const DossierSuivi: React.FC = () => {
 
                   {isMaster && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Date de début souhaitée</label>
-                        <input 
-                          type="date" 
-                          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Date de soutenance prévue</label>
-                        <input 
-                          type="date" 
-                          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
+                                              <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-2">Date de début souhaitée</label>
+                          <input 
+                            type="date" 
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          />
+                        </div>
+                                              <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-2">Date de soutenance prévue</label>
+                          <input 
+                            type="date" 
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          />
+                        </div>
                     </div>
                   )}
                   
@@ -1177,7 +1177,7 @@ const DossierSuivi: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-2">Sujet / Titre</label>
                     <input 
                       type="text" 
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder={isLicence 
                         ? "Titre du rapport de stage..." 
                         : "Titre du mémoire..."
@@ -1189,7 +1189,7 @@ const DossierSuivi: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-2">Description du projet</label>
                     <textarea 
                       rows={4}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                       placeholder={isLicence 
                         ? "Décrivez les missions et objectifs du stage..." 
                         : "Décrivez la problématique et les objectifs du mémoire..."
@@ -1218,7 +1218,7 @@ const DossierSuivi: React.FC = () => {
                     </button>
                     <button 
                       type="submit"
-                      className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                     >
                       {isLicence ? 'Créer le rapport' : 'Créer le mémoire'}
                     </button>

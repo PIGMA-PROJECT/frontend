@@ -175,7 +175,7 @@ const MediathequeSaved: React.FC = () => {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'image':
-        return <Image className="h-5 w-5 text-blue-500" />;
+        return <Image className="h-5 w-5 text-primary" />;
       case 'video':
         return <Video className="h-5 w-5 text-purple-500" />;
       default:
@@ -186,7 +186,7 @@ const MediathequeSaved: React.FC = () => {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'image':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-primary/10 text-primary';
       case 'video':
         return 'bg-purple-100 text-purple-800';
       default:
@@ -222,7 +222,7 @@ const MediathequeSaved: React.FC = () => {
               placeholder="Rechercher dans mes documents..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
@@ -231,7 +231,7 @@ const MediathequeSaved: React.FC = () => {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             {categories.map(cat => (
               <option key={cat.value} value={cat.value}>{cat.label}</option>
@@ -242,7 +242,7 @@ const MediathequeSaved: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
           >
             {sortOptions.map(option => (
               <option key={option.value} value={option.value}>{option.label}</option>
@@ -250,7 +250,7 @@ const MediathequeSaved: React.FC = () => {
           </select>
 
           {/* Statistiques */}
-          <div className="flex items-center justify-center bg-blue-50 rounded-lg px-3 py-2">
+          <div className="flex items-center justify-center bg-primary/5 rounded-lg px-3 py-2">
             <Heart className="h-4 w-4 text-red-500 mr-2" />
             <span className="text-sm text-gray-700">{savedDocuments.length} sauvegardés</span>
           </div>
@@ -276,7 +276,7 @@ const MediathequeSaved: React.FC = () => {
           </p>
           <button
             onClick={() => navigate('/mediatheque')}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
             Parcourir la médiathèque
           </button>
@@ -350,7 +350,7 @@ const MediathequeSaved: React.FC = () => {
                 {/* Tags - hauteur fixe */}
                 <div className="flex flex-wrap gap-1 mb-4 min-h-[24px]">
                   {doc.tags.slice(0, 3).map(tag => (
-                    <span key={tag} className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full">
+                    <span key={tag} className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
                       #{tag}
                     </span>
                   ))}
@@ -388,7 +388,7 @@ const MediathequeSaved: React.FC = () => {
               <div className="px-6 pb-6 mt-auto">
                 <button
                   onClick={() => handleViewDocument(doc.id)}
-                  className="w-full flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                  className="w-full flex items-center justify-center px-3 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
                 >
                   <Eye className="h-4 w-4 mr-2" />
                   Consulter
@@ -411,7 +411,7 @@ const MediathequeSaved: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{savedDocuments.length}</div>
+              <div className="text-2xl font-bold text-primary">{savedDocuments.length}</div>
               <div className="text-sm text-gray-600">Documents sauvegardés</div>
             </div>
             

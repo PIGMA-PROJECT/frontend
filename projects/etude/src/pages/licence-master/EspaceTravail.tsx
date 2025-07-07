@@ -178,7 +178,7 @@ const EspaceTravail: React.FC = () => {
       {
         id: 'inprogress',
         titre: 'En cours',
-        couleur: 'bg-blue-50 border-blue-200',
+        couleur: 'bg-primary/10 border-primary/20',
         limite: 3,
         taches: [
           {
@@ -417,7 +417,7 @@ const EspaceTravail: React.FC = () => {
           {user?.niveau === 'master' ? (
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
                   {getInitials(user.name)}
                 </div>
                 <div>
@@ -446,7 +446,7 @@ const EspaceTravail: React.FC = () => {
               {!membreGroupe && (
                 <button 
                   onClick={() => setShowModalGroupe(true)}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors flex items-center space-x-2"
                 >
                   <FiUserPlus className="h-4 w-4" />
                   <span>Inviter binôme</span>
@@ -455,7 +455,7 @@ const EspaceTravail: React.FC = () => {
             </div>
           ) : (
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+                              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
                 {getInitials(user.name)}
               </div>
               <div>

@@ -137,8 +137,8 @@ const Dashboard: React.FC = () => {
         <DashboardCard 
           title="Documents sauvegardés" 
           value={stats.documents} 
-          icon={<BookOpen className="h-6 w-6" />} 
-          color="bg-blue-500"
+          icon={<BookOpen className="h-6 w-6 text-white" />} 
+          color="bg-primary"
           description="Médiathèque"
           delay={0.1}
         />
@@ -184,7 +184,7 @@ const Dashboard: React.FC = () => {
                 <span className="text-sm font-medium text-gray-700">85%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-blue-500 h-2.5 rounded-full" style={{ width: '85%' }}></div>
+                <div className="bg-primary h-2.5 rounded-full" style={{ width: '85%' }}></div>
               </div>
             </div>
             
@@ -225,7 +225,7 @@ const Dashboard: React.FC = () => {
           
           <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-500">{stats.documents}</div>
+              <div className="text-3xl font-bold text-primary">{stats.documents}</div>
               <div className="text-sm text-gray-600">Documents</div>
             </div>
             <div className="text-center">
@@ -244,13 +244,13 @@ const Dashboard: React.FC = () => {
         >
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-bold">Activités récentes</h2>
-            <button className="text-sm text-blue-500 hover:underline">Voir tout</button>
+            <button className="text-sm text-primary hover:underline">Voir tout</button>
           </div>
           
           <div className="space-y-4">
             {activities.map((activity, index) => (
               <div key={index} className="flex items-start pb-4 border-b border-gray-100 last:border-0">
-                <div className="rounded-full bg-blue-100 p-2 text-blue-500 mr-3">
+                <div className="rounded-full bg-primary/10 p-2 text-primary mr-3">
                   {activity.type === 'document' ? (
                     <FileText className="h-5 w-5" />
                   ) : activity.type === 'chat' ? (
@@ -283,8 +283,8 @@ const Dashboard: React.FC = () => {
         >
           <h2 className="text-xl font-bold mb-4">Accès rapide</h2>
           <div className="grid grid-cols-2 gap-4">
-            <button className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
-              <BookOpen className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <button className="p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors">
+              <BookOpen className="h-8 w-8 text-primary mx-auto mb-2" />
               <p className="text-sm font-medium">Médiathèque</p>
             </button>
             
@@ -362,8 +362,8 @@ const Dashboard: React.FC = () => {
                     <p className="text-xs text-gray-500">18 mai</p>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                <div className="flex items-center p-3 bg-primary/5 rounded-lg">
+                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                   <div>
                     <p className="text-sm font-medium">Séminaire thématique</p>
                     <p className="text-xs text-gray-500">25 mai, 14:00 - 17:00</p>
@@ -373,7 +373,7 @@ const Dashboard: React.FC = () => {
             )}
           </div>
           
-          <button className="mt-4 w-full py-2 text-center text-sm text-blue-500 hover:bg-gray-50 rounded-md transition-colors duration-200">
+          <button className="mt-4 w-full py-2 text-center text-sm text-primary hover:bg-primary/10 rounded-md transition-colors duration-200">
             Voir le calendrier complet
           </button>
         </motion.div>
